@@ -122,6 +122,86 @@
 .form-group input[type="file"]::file-selector-button:hover {
   background-color: #8990ea;
 }
+
+
+/*user css*/
+.user-container {
+ background-color: white;
+       padding: 30px;
+      border-radius: 10px;
+       max-width: 1300px;
+      margin: auto;
+       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        margin-left: 330px;
+      margin-bottom: 30px;
+      margin-top: 50px;
+    }
+
+    .user-container h2 {
+      color: #c084fc;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-dashboard {
+      background-color: #22c55e;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.75rem;
+      border-bottom: 1px solid #334155;
+    }
+
+    .role-user {
+      background-color: #3b82f6;
+      padding: 0.3rem 0.6rem;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 0.85rem;
+    }
+
+    .role-admin {
+      background-color: #ef4444;
+      padding: 0.3rem 0.6rem;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 0.85rem;
+    }
+
+    .profile-yes {
+      background-color: #22c55e;
+      padding: 0.3rem 0.6rem;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      color: #fff;
+    }
+
+    .btn-delete {
+      background-color: #ef4444;
+      margin-right: 0.5rem;
+    }
+
+    .btn-edit {
+      background-color: #8b5cf6;
+    }
+
+    .actions {
+      display: flex;
+    }
     </style>
 </head>
 
@@ -425,7 +505,7 @@
     <div class="statsimg" style=" left: 320px; position: relative; top: 80px;">
         <img src="${pageContext.request.contextPath}/assets/img/newstats.png" alt="stats">
     </div>
-        <!---for product section-->
+        <!---for adding product section-->
     
 <div class="form-container">
   <h2>Add Product</h2>
@@ -461,8 +541,138 @@
     <button type="submit" class="submit-btn">Submit</button>
   </form>
 </div>
+
+            <!---for product view and delete-->
+
+
+<div class="user-container">
+  <h2>Manage Products</h2>
+  <p>Manage all products in the system</p>
+  <br>
+  <button class="btn btn-dashboard">
+    <a href="#" style="text-decoration: none; color: white;">🏠 Dashboard</a>
+  </button>
+
+  <form action="" method="">
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Image</th>
+          <th>Watch Brand</th>
+          <th>Previous Bid</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rolex Submariner</td>
+          <td>Dive watch with rotating bezel</td>
+          <td>$12,000</td>
+          <td><img src="images/rolex.jpg" alt="Rolex" style="width: 80px; height: auto; border-radius: 5px;"></td>
+          <td>Rolex</td>
+          <td>$10,000</td>
+          <td class="actions">
+            <button type="submit" name="delete" value="rolex" class="btn btn-delete">Delete</button>
+            <button type="submit" name="edit" value="rolex" class="btn btn-edit">Edit</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Omega Speedmaster</td>
+          <td>Moonwatch edition with tachymeter</td>
+          <td>$7,500</td>
+          <td><img src="images/omega.jpg" alt="Omega" style="width: 80px; height: auto; border-radius: 5px;"></td>
+          <td>Omega</td>
+          <td>$6,000</td>
+          <td class="actions">
+            <button type="submit" name="delete" value="omega" class="btn btn-delete">Delete</button>
+            <button type="submit" name="edit" value="omega" class="btn btn-edit">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
+
+            <!---end of for product view and delete-->
+
+
+            <!---for user view and delete-->
     
-    
+  <div class="user-container">
+    <h2>Manage Users</h2>
+    <p>Manage all users in the system</p>
+    <br>
+          <button class="btn btn-dashboard"> <a href="#" style="text-decoration: none; color: white;">🏠 Dashboard</a></button>
+
+    <form action="" method="">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Joined</th>
+            <th>Profile</th>
+            <th>Plans</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sujal Parajuli</td>
+            <td>sujal@gmail.com</td>
+            <td><span class="role-admin">admin</span></td>
+            <td>Apr 19, 2025, 06:44 PM</td>
+            <td><span class="profile-yes">Yes</span></td>
+            <td>1</td>
+            <td class="actions">
+              <button type="submit" name="delete" value="Sujal" class="btn btn-delete">Delete</button>
+              <button type="submit" name="edit" value="Sujal" class="btn btn-edit">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Yathartha</td>
+            <td>yathartha2024@gmail.com</td>
+            <td><span class="role-user">user</span></td>
+            <td>Apr 18, 2025, 03:19 PM</td>
+            <td><span class="profile-yes">Yes</span></td>
+            <td>0</td>
+            <td class="actions">
+              <button type="submit" name="delete" value="yathartha" class="btn btn-delete">Delete</button>
+              <button type="submit" name="edit" value="yathartha" class="btn btn-edit">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Niran Bhatta</td>
+            <td>johnsmith2030sj@gmail.com</td>
+            <td><span class="role-user">user</span></td>
+            <td>Apr 18, 2025, 03:11 PM</td>
+            <td><span class="profile-yes">Yes</span></td>
+            <td>0</td>
+            <td class="actions">
+              <button type="submit" name="delete" value="Niran" class="btn btn-delete">Delete</button>
+              <button type="submit" name="edit" value="Niran" class="btn btn-edit">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Sakshyam</td>
+            <td>Sakshyam@gmail.com</td>
+            <td><span class="role-user">user</span></td>
+            <td>Apr 24, 2025, 03:38 PM</td>
+            <td><span class="profile-yes">Yes</span></td>
+            <td>1</td>
+            <td class="actions">
+              <button type="submit" name="delete" value="Sakshyam" class="btn btn-delete">Delete</button>
+              <button type="submit" name="edit" value="Sakshyam" class="btn btn-edit">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
 
    
 </body>
