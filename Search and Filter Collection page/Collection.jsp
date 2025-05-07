@@ -27,12 +27,13 @@
         </div>
     </nav>
 </header>
+<!-- Search barrr-->
 
 <div class="watchfinder">
     <h1 class="watchfindertxt">Watch Finder</h1>
 </div>
 
-<!-- ✅ Modified Search Bar (Now functional with backend) -->
+<!-- Functional Search barrr-->
 <div class="searchproductbox">
     <h3 class="swarchby">Search By References</h3>
     <form action="searchProduct" method="get" class="searchtab">
@@ -45,18 +46,25 @@
 
 <!-- Filter Section -->
 <div class="rect1">
-    <ul class="typetext">
+  <ul class="typetext">
         <li><p class="txtoo">Filter</p></li>
-        <li><p class="txtoo">Patek Philippe</p></li>
-        <li><p class="txtoo">Audemars Piguet</p></li>
-        <li><p class="txtoo">Vacheron Constantin</p></li>
-        <li><p class="txtoo">Jaeger‑LeCoultre</p></li>
-        <li><p class="txtoo">Cartier</p></li>
-        <li><p class="txtoo">Rolex</p></li>
+        <li><a class="txtoo" href="filterProduct?brand=Patek Philippe">Patek Philippe</a></li>
+        <li><a class="txtoo" href="filterProduct?brand=Audemars Piguet">Audemars Piguet</a></li>
+        <li><a class="txtoo" href="filterProduct?brand=Vacheron Constantin">Vacheron Constantin</a></li>
+        <li><a class="txtoo" href="filterProduct?brand=Jaeger‑LeCoultre">Jaeger‑LeCoultre</a></li>
+        <li><a class="txtoo" href="filterProduct?brand=Cartier">Cartier</a></li>
+        <li><a class="txtoo" href="filterProduct?brand=Rolex">Rolex</a></li>
+        <li><a class="txtoo" href="Collection.jsp">Clear Filter</a></li>
     </ul>
 </div>
+<!-- which brand is selected Section -->
 
-<!-- ✅ Product Display Section -->
+<c:if test="${not empty param.brand}">
+  <p style="margin-left: 95px; font-weight: bold; color: #000040; margin-top: 20px;">Filtered by: ${param.brand}</p>
+</c:if>
+
+
+<!--Product Display Section -->
 <div class="containe1">
     <div class="insideshit">
 
